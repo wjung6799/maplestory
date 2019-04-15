@@ -1,13 +1,13 @@
 package gameobjects.user;
 
-public abstract class Character {
+public abstract class LiveObject {
 	private String name;
 	private Status status;
 	private Location location;
+	private Gage health;
 	
-	public Character(String name, Status status) {
+	public LiveObject(String name, Status status) {
 		this.name = name;
-		setStatus(status);
 	}
 	
 	public String getName() {
@@ -30,7 +30,11 @@ public abstract class Character {
 		this.location = location;
 	}
 	
-	abstract public void attack();
-	abstract public void travel();
+	public void setHealth(int value) {
+		health.change(value);
+	}
 	
+	public void basicAttack(LiveObject other) {
+		other.setHealth(-status.getStrength());
+	}
 }

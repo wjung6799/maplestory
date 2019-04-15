@@ -5,6 +5,13 @@ public class Status {
 	private int dexterity;
 	private int intelligence;
 	private int luck;
+	
+	public Status(int strength, int dexterity, int intelligence, int luck) {
+		setStrength(strength);
+		setDexterity(dexterity);
+		setIntelligence(intelligence);
+		setLuck(luck);
+	}
 
 	public int getStrength() {
 		return strength;
